@@ -19,7 +19,7 @@ services:
     - REACT_APP_SERVICE_HOST=${REACT_APP_SERVICE_HOST}
   mongodb:
     image: mongo
-    #ports:
-    #- "27017:27017"
+    ports:
+    - "27017:27017"
 ...
 

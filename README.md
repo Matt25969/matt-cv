@@ -1,6 +1,6 @@
 Introduction 
 -----------
-This is a simple trainer management system that can be used as a reference architecture to build a full-stack application. This system is built with the following technologies:
+This is a CV management system that can be used as a reference architecture to build a full-stack application. This system is built with the following technologies:
 
 -   [Spring boot](https://spring.io/projects/spring-boot) for server side web pages and services
 
@@ -24,6 +24,7 @@ Using the Windows package manager install virtualbox and docker toolbox using th
 ```
 choco install -y  virtualbox
 choco install -y docker-toolbox -ia /TASKS="desktopicon,modifypath,upgradevm"
+choco install -y maven
 ```
 Step 3:
 Close the current command prompt and open the Docker Quickstart Terminal (icon on is on your desktop)
@@ -33,9 +34,11 @@ Project Management
 ---------------
 This project used an Agile methodology using the follow example task board: https://trello.com/b/lu4XPoxP/trainer-app
 
+The Task Board allowed time and resources to be allocated for each task that had to be completed to complete the project.
+
 Architecture
 ---------------
-The following diagram shows the high level reference architecture for the application: ![](./cv-back/docs/img/architecture.jpg)
+The following diagram shows the high level reference architecture for the application: ![](./docs/img/architecture.jpg)
 
 Running the application
 -----
@@ -43,15 +46,20 @@ Step 1:
 Make a directory for your work and clone this project using the following command:
 ```
 mkdir -p ~/projects && cd $_
-git clone https://github.com/matt25969/CVProject2 && cd CVProject2
+git clone https://github.com/Matt25969/matt-cv.git && cd matt-cv
 ```
 Step 2:
-Navigate to the root of this project and run the following command.
+Navigate to the cv-service folder and run the following command.
+```
+mvn clean install
+```
+Step 3:
+Navigate to the cv-automation folder and run the following commands.
 ```
 docker-compose up -d --build
 ```
-Step 3:
+Step 4:
 Access the applicaton by accessing the following URL in the browser
 ```
-http://192.168.99.100:4011/
+http://192.168.99.100:3000/
 ```
